@@ -1,5 +1,10 @@
 package jdbcproject;
 
+// Var tvungen att ändra datatyp för strängar i databasen från 'linestring'
+// till varchar(). Fick fel som ... data truncation...object geometry.
+// Jag har auto_increment, och när jag tog bort rad med index 3 så blev
+// ju resultatet raderna 1,2,4,5,6... Försökte ändra namn för rad med id 3
+// men fick inget fel...mystiskt.
 
 import java.sql.*;
 import java.util.Scanner;
@@ -47,7 +52,7 @@ public class JDBCProject {
         System.out.println("0. Exit");
 
         int choice = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); // Glömde den här... tur att jag listade ut det.
 
         switch(choice) {
 
